@@ -1,84 +1,89 @@
-<html>
+<html lang="en">
 <head>
-    <title>Page Layout</title>
-    <style>
-        .head1 {
-            font-size:40px;
-            color:#009900;
-            font-weight:bold;
-        }
-        .head2 {
-            font-size:17px;
-            margin-left:10px;
-            margin-bottom:15px;
-        }
-        body {
-            margin: 0 auto;
-            background-position:center;
-            background-size: contain;
-        }
-
-        .menu {
-            position: sticky;
-            top: 0;
-            background-color: #009900;
-            padding:10px 0px 10px 0px;
-            color: white;
-            margin: 0 auto;
-            overflow: hidden;
-        }
-        .menu a {
-            float: left;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-            font-size: 20px;
-        }
-        .menu-log {
-            right: auto;
-            float: right;
-        }
-        footer {
-            width: 100%;
-            bottom: 0px;
-            background-color: #000;
-            color: #fff;
-            position: absolute;
-            padding-top:20px;
-            padding-bottom:50px;
-            text-align:center;
-            font-size:30px;
-            font-weight:bold;
-        }
-        .body_sec {
-            margin-left:20px;
-        }
-    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://www.horsesstable.com/wp-content/themes/horsesstable/css/bootstrap/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://www.horsesstable.com/wp-content/themes/horsesstable/js/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
+    <link rel="stylesheet" href="https://www.horsesstable.com/wp-content/themes/horsesstable/css/landing-page.css">
+	<link rel="stylesheet" href="https://www.horsesstable.com/wp-content/themes/horsesstable/css/r-landing-page.css">
+    <title>Horse Stable</title>
 </head>
-
 <body>
-
-     <header>
-        <center><div class="head1">Saniketh The Minion</div></center>
-        <div class="head2">A computer science disaster website for charan</div>
-    </header>
-
-    <nav class="menu">
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">HOME</a>
-        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">MENU</a>
-        <a href="#notification">NOTIFICATIONS</a>
-        <div class="menu-log">
-            <a href="#login">LOGIN</a>
+    <div class="gsap_loader">
+        <div class="overlay">  
+            <div class="preloader-img-wrapper">
+                <img src="https://tenor.com/search/rickroll-gifs" alt="" class="preloader-img">
+            </div
+            <div class="progressbar">
+            </div>       
+        </div>          
+    </div>
+    
+    <section class="section" id="coming-soon">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-5">
+                    <div class="text-wrap">
+                        <h2 class="section-title an-left" id="hs">Horses Stable</h2>
+                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="theme-btn-2 an-left">View</a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <div class="logo-wrap">
+                        <img src="https://www.theverge.com/tldr/22289657/never-gonna-give-you-up-4k" alt="">
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class="text-wrap an-right">
+                        <h2 class="section-title an-right">Horses Stable Junior</h2>
+                        <a href="https://www.horsesstable.com/junior/" class="theme-btn-2 an-right">View</a>
+                    </div>
+                </div>
+            </div>
         </div>
-      </nav>
+    </section>
 
-    <main class = "body_sec">
-        <section id="Content">
-            <h3>Content section</h3>
-        </section>
-      </main>
+    <script>
+        
+    </script>
+    
+    <script>
+        var loadingTween = gsap.timeline({ paused: true })    
+        loadingTween
+        .set('.progressbar', {scaleX: 0})
+        .to('.progressbar', 3, { transformOrigin: "center left",  scaleX: 1,  ease: Linear.easeNone, 
+            onUpdate: function() {
+                newPercent = Math.floor((this.progress()*100));
+                $('.count').text(newPercent + '%');
+            },
+            onComplete: function(){ 
+                $('.progressBar').addClass("complete");
+            }
+        })
+        .to('.count', { duration: 0.5, autoAlpha:0})
+        .to(".overlay", { duration: 0.5, scaleX:0, transformOrigin: "center right"})
+        gsap.from(".an-left", {opacity: 0, x: -100, duration: 1, delay: 4.3, stagger: 0.6})
+        gsap.from(".an-right", {opacity: 0, x: 100, duration: 1, delay: 4.3, stagger: 0.6});
 
-    <footer>Footer Section</footer>
+        window.onload = function () {
+            loadingTween.play();
+        }
+
+        $(".theme-btn-2.an-left").mouseenter(function(){
+            gsap.to(".section-title.an-left", {y: -10, duration: 1})
+        });
+        $(".theme-btn-2.an-left").mouseleave(function(){
+            gsap.to(".section-title.an-left", {y: 0, duration: 1})
+        });
+        $(".theme-btn-2.an-right").mouseenter(function(){
+            gsap.to(".section-title.an-right", {y: -10, duration: 1})
+        });
+        $(".theme-btn-2.an-right").mouseleave(function(){
+            gsap.to(".section-title.an-right", {y: 0, duration: 1})
+        });
+    </script>
 </body>
 </html>
