@@ -1,39 +1,88 @@
-<html lang="en" dir="ltr">
+<html>
 <head>
-<meta charset="utf-8">
-<marquee behavior="alternate" scrollamount="24"><title>Charan The Thalaivar</title></marquee>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<style>
+    <title>Page Layout</title>
+    <style>
+        .head1 {
+            font-size:40px;
+            color:#009900;
+            font-weight:bold;
+        }
+        .head2 {
+            font-size:17px;
+            margin-left:10px;
+            margin-bottom:15px;
+        }
+        body {
+            margin: 0 auto;
+            background-position:center;
+            background-size: contain;
+        }
+      
+        .menu { 
+            position: sticky;
+            top: 0;
+            background-color: #009900;
+            padding:10px 0px 10px 0px;
+            color:white;
+            margin: 0 auto;
+            overflow: hidden;
+        }
+        .menu a {
+            float: left;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+            font-size: 20px;
+        }
+        .menu-log {
+            right: auto;
+            float: right;
+        }
+        footer {
+            width: 100%;
+            bottom: 0px;
+            background-color: #000;
+            color: #fff;
+            position: absolute;
+            padding-top:20px;
+            padding-bottom:50px;
+            text-align:center;
+            font-size:30px;
+            font-weight:bold;
+        }
+        .body_sec {
+            margin-left:20px;
+        }
+    </style>
 </head>
-<body>
-
-<p>In this example, we have created a header, two columns/boxes and a footer. On smaller screens, the columns will stack on top of each other.</p>
-<p>Resize the browser window to see the responsive effect (you will learn more about this in our next chapter - HTML Responsive.)</p>
-
-<header>
-  <h2>Charan</h2>
-</header>
-
-<section>
-  <nav>
-    <ul>
-      <li><a href="#">Anish</a></li>
-      <li><a href="#">Sanketh</a></li>
-      <li><a href="#">Sushanth</a></li>
-    </ul>
-  </nav>
   
-  <article>
-    <h1>Thalaivar</h1>
-    <p> Charan is the boss of all. He is supreme May God Help us.</p>
-    <p>Sanketh us his minion so god please try to save us</p>
-  </article>
-</section>
-
-<footer>
-  <p>By Sushanth</p>
-</footer>
-
+<body>
+      
+    <!-- Header Section -->
+    <header>
+        <div class="head1">GeeksforGeeks</div>
+        <div class="head2">A computer science portal for geeks</div>
+    </header>
+      
+    <!-- Menu Navigation Bar -->
+    <nav class="menu">
+        <a href="#home">HOME</a>
+        <a href="#news">NEWS</a>
+        <a href="#notification">NOTIFICATIONS</a>
+        <div class="menu-log">
+            <a href="#login">LOGIN</a>
+        </div>
+      </nav>
+      
+    <!-- Body section -->
+    <main class = "body_sec">
+        <section id="Content">
+            <h3>Content section</h3>
+        </section>
+      </main>
+      
+    <!-- Footer Section -->
+    <footer>Footer Section</footer>
 </body>
 </html>
-
