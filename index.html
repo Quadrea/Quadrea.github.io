@@ -1,89 +1,60 @@
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://www.horsesstable.com/wp-content/themes/horsesstable/css/bootstrap/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://www.horsesstable.com/wp-content/themes/horsesstable/js/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.2/gsap.min.js"></script>
-    <link rel="stylesheet" href="https://www.horsesstable.com/wp-content/themes/horsesstable/css/landing-page.css">
-	<link rel="stylesheet" href="https://www.horsesstable.com/wp-content/themes/horsesstable/css/r-landing-page.css">
-    <title>Horse Stable</title>
-</head>
+<html>
+<head></head>
 <body>
-    <div class="gsap_loader">
-        <div class="overlay">  
-            <div class="preloader-img-wrapper">
-                <img src="https://tenor.com/search/rickroll-gifs" alt="" class="preloader-img">
-            </div
-            <div class="progressbar">
-            </div>       
-        </div>          
+
+<div class="header">
+  <h1>Rickroll</h1>
+  <p> For Rick Astley</p>
+</div>
+
+<div class="navi">
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">RickRoll</a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">RickRoll2</a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Rickroll3</a>
+  <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" style="float:right">Link</a>
+</div>
+
+<div class="row">
+  <div class="leftcolumn">
+    <div class="card">
+      <h2>By Sushanth</h2>
+      <h5>On 15-07-2022</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Some text..</p>
+      <p>RickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRick</p>
     </div>
-    
-    <section class="section" id="coming-soon">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-5">
-                    <div class="text-wrap">
-                        <h2 class="section-title an-left" id="hs">Horses Stable</h2>
-                        <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ" class="theme-btn-2 an-left">View</a>
-                    </div>
-                </div>
-                <div class="col-md-2">
-                    <div class="logo-wrap">
-                        <img src="https://www.theverge.com/tldr/22289657/never-gonna-give-you-up-4k" alt="">
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <div class="text-wrap an-right">
-                        <h2 class="section-title an-right">Horses Stable Junior</h2>
-                        <a href="https://www.horsesstable.com/junior/" class="theme-btn-2 an-right">View</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+    <div class="card">
+      <h2>By Sushanth</h2>
+      <h5>15-07-2022</h5>
+      <div class="fakeimg" style="height:200px;">Image</div>
+      <p>Sushanth</p>
+      <p>For Rick</p>
+    </div>
+  </div>
+  <div class="rightcolumn">
+    <div class="card">
+      <h2>About Rick</h2>
+      <div class="fakeimg" style="height:100px;">Image</div>
+      <p>RickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRickRick</p>
+    </div>
+    <div class="card">
+      <h3>Popular Post</h3>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+      <div class="fakeimg"><p>Image</p></div>
+    </div>
+    <div class="card">
+      <h3>Follow Me</h3>
+      <p>Astley</p>
+    </div>
+  </div>
+</div>
 
-    <script>
-        
-    </script>
-    
-    <script>
-        var loadingTween = gsap.timeline({ paused: true })    
-        loadingTween
-        .set('.progressbar', {scaleX: 0})
-        .to('.progressbar', 3, { transformOrigin: "center left",  scaleX: 1,  ease: Linear.easeNone, 
-            onUpdate: function() {
-                newPercent = Math.floor((this.progress()*100));
-                $('.count').text(newPercent + '%');
-            },
-            onComplete: function(){ 
-                $('.progressBar').addClass("complete");
-            }
-        })
-        .to('.count', { duration: 0.5, autoAlpha:0})
-        .to(".overlay", { duration: 0.5, scaleX:0, transformOrigin: "center right"})
-        gsap.from(".an-left", {opacity: 0, x: -100, duration: 1, delay: 4.3, stagger: 0.6})
-        gsap.from(".an-right", {opacity: 0, x: 100, duration: 1, delay: 4.3, stagger: 0.6});
+<div class="footer">
+  <h2>By Sushanth</h2>
+</div>
 
-        window.onload = function () {
-            loadingTween.play();
-        }
-
-        $(".theme-btn-2.an-left").mouseenter(function(){
-            gsap.to(".section-title.an-left", {y: -10, duration: 1})
-        });
-        $(".theme-btn-2.an-left").mouseleave(function(){
-            gsap.to(".section-title.an-left", {y: 0, duration: 1})
-        });
-        $(".theme-btn-2.an-right").mouseenter(function(){
-            gsap.to(".section-title.an-right", {y: -10, duration: 1})
-        });
-        $(".theme-btn-2.an-right").mouseleave(function(){
-            gsap.to(".section-title.an-right", {y: 0, duration: 1})
-        });
-    </script>
 </body>
 </html>
+
+
